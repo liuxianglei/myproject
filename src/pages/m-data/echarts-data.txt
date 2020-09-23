@@ -1,0 +1,523 @@
+gnss option
+option = {
+    title: {
+        text: '折线图堆叠'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['地表位移历时曲线数据', '降雨量数据']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'time',
+        boundaryGap: false,
+        data: ['2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08']
+    },
+    yAxis: {
+        type: 'value',
+        boundaryGap: [0, '100%'],
+    },
+    series: [
+        {
+            name: '地表位移历时曲线数据',
+            type: 'line',
+            stack: '总量',
+            data: 
+            [["2020-07-05 10:00:00",77],["2020-07-05 12:00:00",80], ["2020-07-06 12:00:00",88], ["2020-07-06 14:00:00",98], ["2020-07-07 10:00:00",105], ["2020-07-07 13:00:00",109], ["2020-07-08 10:00:00",111]]
+        },
+       {
+            name: '降雨量数据',
+            type: 'line',
+            stack: '总量',
+            data: [{
+                    name:'2020-07-05 07:00:00',
+                    value: ["2020-07-05T07:00:00", 44],
+                    labelFormatter: function (value) {
+                        return value[0];
+                    },
+                    itemStyle:{}
+                
+            },
+                    ["2020-07-05T09:00:00",65],
+            ["2020-07-05 13:00:00",82], ["2020-07-06 14:00:00",89], ["2020-07-06 16:00:00",101], ["2020-07-07 08:00:00",100], ["2020-07-07 13:00:00",109], ["2020-07-08 11:00:00",120]]
+        },
+        {
+            name: '地表位移历时曲线数据',
+            type: 'line',
+            stack: '总量',
+            data: 
+            [["2020-07-05 10:00:00",77],["2020-07-05 12:00:00",80], ["2020-07-06 12:00:00",88], ["2020-07-06 14:00:00",98], ["2020-07-07 10:00:00",105], ["2020-07-07 13:00:00",109], ["2020-07-08 10:00:00",111]]
+        },
+       {
+            name: '降雨量数据',
+            type: 'line',
+            stack: '总量',
+            data: [{
+                    name:"2020-07-05 07:00:00",
+                    value: ["2020-07-05T07:00:00", 44],
+                    labelFormatter: function (value) {
+                        return value[0];
+                    },
+                    itemStyle:{}
+                
+            },
+                    ["2020-07-05T09:00:00",65],
+            ["2020-07-05 13:00:00",82], ["2020-07-06 14:00:00",89], ["2020-07-06 16:00:00",101], ["2020-07-07 08:00:00",100], ["2020-07-07 13:00:00",109], ["2020-07-08 11:00:00",120]]
+        },
+        
+        // {
+        //     name: '视频广告',
+        //     type: 'line',
+        //     stack: '总量',
+        //     data: [150, 232, 201, 154, 190, 330, 410]
+        // },
+        // {
+        //     name: '直接访问',
+        //     type: 'line',
+        //     stack: '总量',
+        //     data: [320, 332, 301, 334, 390, 330, 320]
+        // },
+        // {
+        //     name: '搜索引擎',
+        //     type: 'line',
+        //     stack: '总量',
+        //     data: [820, 932, 901, 934, 1290, 1330, 1320]
+        // }
+    ]
+};
+
+//地表双y轴
+option = {
+    title: {
+        text: '折线图堆叠'
+    },
+    tooltip: {
+        trigger: 'axis'
+    },
+    legend: {
+        data: ['∆X', '降雨量数据']
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    toolbox: {
+        feature: {
+            saveAsImage: {}
+        }
+    },
+    xAxis: {
+        type: 'time',
+        boundaryGap: false,
+        data: ['2020-07-05', '2020-07-06', '2020-07-07', '2020-07-08'],
+        splitLine:{
+                show:false
+            } 
+    },
+    yAxis: [
+        {
+            name:'位移',
+            type: 'value',
+            boundaryGap: [0, '100%'],
+            splitLine:{
+                show:false
+            } 
+        },
+        {
+            name:'降雨量',
+            type: 'value',
+            boundaryGap: [0, '100%'],
+            splitLine:{
+                show:false
+            } 
+        }
+    ],
+    series: [
+        {
+            name: '∆X',
+            type: 'line',
+            stack: '总量',
+            data: 
+            [["2020-07-05 10:00:00",77],["2020-07-05 12:00:00",80], ["2020-07-06 12:00:00",88], ["2020-07-06 14:00:00",98], ["2020-07-07 10:00:00",105], ["2020-07-07 13:00:00",109], ["2020-07-08 10:00:00",111]]
+        },
+       {
+            name: '降雨量数据',
+            type: 'bar',
+            stack: '总量',
+            yAxisIndex: 1,
+            data: [{
+                    name:'2020-07-05 07:00:00',
+                    value: ["2020-07-05T07:00:00", 44],
+                    labelFormatter: function (value) {
+                        return value[0];
+                    },
+                    itemStyle:{}
+                
+            },
+                    ["2020-07-05T09:00:00",65],
+            ["2020-07-05 13:00:00",82], ["2020-07-06 14:00:00",89], ["2020-07-06 16:00:00",101], ["2020-07-07 08:00:00",100], ["2020-07-07 13:00:00",109], ["2020-07-08 11:00:00",120]]
+        }
+        
+    ]
+};
+
+
+fta option
+option = {
+    legend: {
+        data: ['高度(km)与气温(°C)变化关系','高度(km)与气温(°C)变化关系2']
+    },
+    tooltip: {
+        trigger: 'axis',
+        // formatter: '{b}km :<br/> {a}°C'
+    },
+    grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+    },
+    xAxis: {
+        type: 'value',
+        axisLabel: {
+            formatter: '{value} °C'
+        }
+    },
+    yAxis: {
+        type: 'category',
+        axisLine: {onZero: false},
+        axisLabel: {
+            formatter: '{value} km'
+        },
+        boundaryGap: false,
+        data: ['0', '10', '20', '30', '40', '50', '60', '70', '80']
+    },
+    series: [
+        {
+            name: '高度(km)与气温(°C)变化关系',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                width: 3,
+                shadowColor: 'rgba(0,0,0,0.4)',
+                shadowBlur: 10,
+                shadowOffsetY: 10
+            },
+            data:[15, 10, 5, -0, -5, -10, -20, -30, -40]
+        },
+        {
+            name: '高度(km)与气温(°C)变化关系2',
+            type: 'line',
+            smooth: true,
+            lineStyle: {
+                width: 3,
+                shadowColor: 'rgba(0,0,0,0.4)',
+                shadowBlur: 10,
+                shadowOffsetY: 10
+            },
+            data:[15, -50, -56.5, -46.5, -22.1, -2.5, -27.7, -55.7, -76.5]
+        }
+    ]
+};
+
+//仪表盘
+var maxValue = 360;
+var option = {
+    title: {
+     
+    },
+    tooltip: {
+        formatter: "{a} : {c}"
+    },
+    toolbox: {
+
+    },
+    series: [{
+        name: '',
+        type: 'gauge',
+        min: 0,
+        max: maxValue,
+        startAngle: 90,
+        endAngle: 449.99999,
+        radius: '80%',
+        splitNumber: 12,
+        clockwise: false,
+        animation: false,
+        detail: {
+            formatter: '{value}',
+            textStyle: {
+                color: '#63869e'
+            }
+        },
+        data: [{
+            value: 0,
+            name: ''
+        }],
+        axisLine: {
+            lineStyle: {
+                color: [
+                    [0, '#ffffff'],
+                    [1, '#177DDC']
+                ],
+                width: 10
+            }
+        },
+        splitLine: {
+            length: 20,
+            lineStyle: {
+                color: '#177DDC',
+                width: 2
+            }
+        },
+        itemStyle: {
+            normal: {
+                color: '#177DDC',
+                width: 2
+            }
+        }
+    }]
+};
+
+
+//3D
+option = {
+        grid3D: {},
+        xAxis3D: {
+            type: 'category'
+        },
+        yAxis3D: {
+        },
+        zAxis3D: {
+            name : 'Z(m)'
+        },
+        dataset: {
+            dimensions: [
+                'Income',
+                'Life Expectancy',
+                'Population',
+                'Country',
+                {name: 'Year', type: 'ordinal'}
+            ],
+            source: data
+        },
+        series: [
+            {
+                type: 'scatter3D',
+                symbolSize: symbolSize,
+                encode: {
+                    x: 'Country',
+                    y: 'Life Expectancy',
+                    z: 'Income',
+                    tooltip: [0, 1, 2, 3, 4]
+                }
+            }
+        ]
+    };
+
+//项目状态统计
+option  = {
+    backgroundColor:'#23262E',
+        series: [
+          {
+            name: "刻度",
+            type: "gauge",
+            center: ["50%", "65%"],
+            radius: '90%',
+            min: 0, //最小刻度
+            max: 4, //最大刻度
+            startAngle: 180,
+            endAngle: 0,
+            axisLine: {
+              show: true,
+              lineStyle: {
+                width: 1,
+                color: [[1, "rgba(0,0,0,0)"]],
+              },
+            }, //仪表盘轴线
+            axisLabel: {
+              show: false,
+              color: "#0ab7ff",
+              fontSize: 15,
+              distance: -50,
+              formatter: function (v) {
+                return v ;
+              },
+            }, //刻度标签。
+            axisTick: {
+              show: false,
+              splitNumber: 1,
+              lineStyle: {
+                color: "#0ab7ff",
+                width: 1,
+              },
+              length: -3,
+            }, //刻度样式
+            splitLine: {
+              show: false,///,
+              length: -5,
+              lineStyle: {
+                color: "#0ab7ff",
+              },
+            }, //分隔线样式
+          },
+          {
+            type: "gauge",
+             radius: '80%',
+            center: ["50%", "65%"],
+            splitNumber: 0, //刻度数量
+            startAngle: 180,
+            endAngle: 0,
+            axisLine: {
+              show: true,
+              lineStyle: {
+                width: 50,
+                color: [
+                  [0.25, "#00a65a"],
+                  [0.5, "#E9C855"],
+                  [0.75, "#F66543"],
+                  [1, "#CD2A2A"],
+                ],
+              },
+            },
+            //分隔线样式。
+            splitLine: {
+              show: false,
+            },
+            axisLabel: {
+              show: false,
+            },
+            axisTick: {
+              show: false,
+            },
+            pointer: {
+              show: true,
+              length: "80%",
+              width: "2%",
+            },
+            title: {
+              show: true,
+              offsetCenter: [0, "60%"], // x, y，单位px
+              textStyle: {
+                fontWeight: "bold",
+                color: "#0ab7ff",
+                fontSize: 30,
+              },
+            },
+            //仪表盘详情，用于显示数据。
+            detail: {
+              show: true,
+              offsetCenter: [0, "30%"],
+              color: "#ffffff",
+
+              formatter: function (value) {
+                if (value <= 25) {
+                  return "正常";
+                } else if (value <= 50) {
+                  return "黄色预警";
+                } else if (value <= 75) {
+                  return "橙色预警";
+                } else {
+                  return "红色预警";
+                }
+              },
+              textStyle: {
+                fontSize: 30,
+              },
+            },
+            data: [
+              {
+                // name: "红色预警",
+                value: 37.5,
+              },
+            ],
+          },
+        ],
+      };
+
+//monitor 监测点统计
+option = {
+    dataset: {
+        source: [
+            [58212, '正常'],
+            [78254, '黄色'],
+            [ 41032, 'Cheese Cocoa'],
+            [ 12755, 'Cheese Brownie'],
+            [ 20145, 'Matcha Cocoa']
+           
+        ]
+    },
+    grid: {containLabel: true},
+    xAxis: {name: ''},
+    yAxis: {type: 'category'},
+    series: [
+        {
+            itemStyle: {
+            normal: {
+                // 定制显示（按顺序）
+                color: function(params) { 
+                    var colorList = ['#C0C0C0','#C33531','#EB6142','#EFE42A','#64BD3D']; 
+                    return colorList[params.dataIndex] 
+                }
+                },
+            },
+            label: {
+                show: true,
+                position: 'inside'
+            },
+            type: 'bar',
+            encode: {
+                // Map the "amount" column to X axis.
+                x: '',
+                // Map the "product" column to Y axis
+                y: ''
+            }
+        }
+    ]
+};
+//位移矢量关系图
+option = {
+    title: {
+        text: '笛卡尔坐标系上的 Graph'
+    },
+    tooltip: {},
+    xAxis: {
+        type : 'category',
+        boundaryGap : false,
+        data : axisData
+    },
+    yAxis: {
+        type : 'value'
+    },
+    series: [
+        {
+            type: 'graph',
+            layout: 'none',
+            coordinateSystem: 'cartesian2d',
+            symbolSize: 40,
+            label: {
+                show: true
+            },
+            edgeSymbol: ['circle', 'arrow'],
+            edgeSymbolSize: [4, 10],
+            data: data,
+            links: links,
+            lineStyle: {
+                color: '#2f4554'
+            }
+        }
+    ]
+};

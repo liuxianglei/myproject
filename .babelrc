@@ -1,0 +1,27 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+              "modules": false,
+              "useBuiltIns": "usage",
+              "targets": {},
+              "corejs": { "version": 3, "proposals": true }
+            }
+        ],
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-class-properties",
+        "@babel/plugin-proposal-object-rest-spread",
+        [
+            "@babel/plugin-transform-runtime", 
+            {
+                "corejs": 3,
+                "helpers": true, // 默认，可以不写
+                "regenerator": true,
+                "useESModules": true
+            }
+        ]
+    ]
+}
